@@ -22,9 +22,17 @@ public class Rental {
     this.daysRented = daysRented;
   }
 
+  // tag::go-to-usage[]
+  /*
+   Put the cursor on getDaysRented
+   and use the action: Go to Declarations or Usages
+   or press Ctrl+B or Ctrl+left_click
+  */
   public int getDaysRented() {
     return daysRented;
   }
+
+  // end::go-to-usage[]
 
   public Movie getMovie() {
     return movie;

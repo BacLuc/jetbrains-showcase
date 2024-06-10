@@ -66,6 +66,10 @@ public class SolutionCustomerController {
     return ResponseEntity.ok(formattedText);
   }
 
+  // tag::compare-with-clipboard-source[]
+  /*
+    Copy this method into your clipboard
+   */
   public ResponseEntity<RentalStatement> getJsonInvoice(String customerName) {
     var rentalStatementOptional = createRentalStatement(customerName);
     if (rentalStatementOptional.isEmpty()) {
@@ -73,6 +77,7 @@ public class SolutionCustomerController {
     }
     return ResponseEntity.ok(rentalStatementOptional.get());
   }
+  // end::compare-with-clipboard-source[]
 
   private Optional<RentalStatement> createRentalStatement(String customerName) {
     var customerOptional = customerRepository.findById(customerName);

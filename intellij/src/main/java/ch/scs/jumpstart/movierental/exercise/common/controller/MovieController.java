@@ -15,9 +15,18 @@ public class MovieController {
   static final String PATH = "/movies";
   private final MovieRepository movieRepository;
 
+  // tag::go-to-test[]
+  /*
+   Put the cursor on MovieController
+   and use action "Go to test" to navigate to a test
+   or create a test.
+   Or use Ctrl + Shift + T
+  */
   public MovieController(MovieRepository movieRepository) {
     this.movieRepository = movieRepository;
   }
+
+  // end::go-to-test[]
 
   @PostMapping(PATH)
   public ResponseEntity<Movie> addMovie(@RequestBody Movie movie) {

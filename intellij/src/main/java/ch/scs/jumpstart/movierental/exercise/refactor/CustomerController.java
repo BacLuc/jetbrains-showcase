@@ -15,8 +15,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomerController {
 
+  // tag::type-hierarchy[]
+  /*
+    Put the cursor on CustomerRepository
+    and use the action "Type Hierarchy"
+    or press Ctrl + H
+   */
   private final CustomerRepository customerRepository;
+  // end::type-hierarchy[]
+  // tag::go-to-declaration[]
+  /*
+   Put the cursor on MovieRepository and use command "Go to declaration"
+   Or press Ctrl+B
+   Or Ctrl + left_click on MovieRepository
+  */
   private final MovieRepository movieRepository;
+
+  // end::go-to-declaration[]
 
   public CustomerController(
       CustomerRepository customerRepository, MovieRepository movieRepository) {
@@ -36,10 +51,10 @@ public class CustomerController {
   public ResponseEntity<Customer> addRental(String customerName, AddRental addRental) {
     // tag::variable-inspection[]
     /*
-      Hover over the variable to see its type.
-      Or use "Hover Info"
-      Or "Type Info" Ctrl + Shift + P
-     */
+     Hover over the variable to see its type.
+     Or use the action "Hover Info"
+     Or "Type Info" Ctrl + Shift + P
+    */
     var customerOptional = customerRepository.findById(customerName);
     // end::variable-inspection[]
     if (customerOptional.isEmpty()) {
@@ -52,9 +67,9 @@ public class CustomerController {
 
     // tag::parameter-inspection[]
     /*
-      Use "Parameter Info" on the first parameter movie.get()
-      Shortcut: Ctrl + P
-     */
+     Use the action "Parameter Info" on the first parameter movie.get()
+     Shortcut: Ctrl + P
+    */
     var rental = new Rental(movie.get(), addRental.getDaysRented());
     // end::parameter-inspection[]
     var customer = customerOptional.get();
@@ -64,66 +79,41 @@ public class CustomerController {
     return ResponseEntity.ok(customer);
   }
 
+  // tag::compare-with-clipboard-target[]
+  /*
+    Select this method
+    and use action "Compare with clipboard"
+   */
   public ResponseEntity<String> getInvoice(String customerName) {
     var customerOptional = customerRepository.findById(customerName);
     if (customerOptional.isEmpty()) {
       return ResponseEntity.notFound().build();
     }
     var customer = customerOptional.get();
+    // tag::show-context-info[]
+    /*
+    Put the cursor on ResponseEntity
+    and use action "Show context info"
+    or press Ctrl + Q
+     */
     return ResponseEntity.ok(customer.statement());
+    // end::show-context-info[]
   }
+  // end::compare-with-clipboard-target[]
 
   public ResponseEntity<RentalStatement> getJsonInvoice(String customerName) {
     // TODO
+    // tag::file-structure[]
+    /*
+      Use action "File structure"
+      or press Ctrl+F12
+      You can also search in the popup to navigate fast.
+      (you can search in most of the jetbrains windows)
+
+      It does not matter where you do that,
+      asciidoc code inclusion needs some code to include.
+     */
     return ResponseEntity.internalServerError().build();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // end::file-structure[]
   }
 }

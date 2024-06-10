@@ -5,8 +5,9 @@ image::scs_logo_text.png[]
 This repo shows some of the capabilities of the different jetbrains products.
 Many of them work for all of them, some are only available for certain products.
 
-To jump directly to places where you can use the feature, AsciiDoc include macros are used.
-With IntelliJ, you can use Ctrl+click (or Command+Click) to jump to the tag.
+To jump directly to places where you can use the feature, AsciiDoc include macros are used. +
+For that to work well, you need the https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDoc Plugin]. +
+Then you can use Ctrl+click (or Command+Click) to jump to the tag.
 
 To use Jetbrains products, you don't need to know all the shortcuts.
 But one shortcut to start would be good: Shift + Shift opens the search all box, where
@@ -17,6 +18,16 @@ To know what you may want to optimize you can use the "Productivity Guide".
 
 image::assets/my-productivity-find-action.png[find action my productivity]
 image::assets/my-productivity.png[my producitvity]
+
+== View Modes
+
+https://www.jetbrains.com/help/idea/ide-viewing-modes.html[]
+
+. Full screen mode
+. Distraction free mode
+. Presentation mode
+. Zen mode
+. Compact mode
 
 == Analyze code
 
@@ -30,34 +41,45 @@ include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/C
 --
 include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=parameter-inspection]
 --
-. Show quick info
+. Show context info
 +
 --
-include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=parameter-inspection]
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=show-context-info]
 --
-. Go to Definition
+. Go to Declaration
 +
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=go-to-declaration]
 --
-. Go to test (or create test) ctrl + shift + T
+. Go to Usages
 +
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/entity/Rental.java[tag=go-to-usage]
 --
-. File Structure (ctrl + F12)
+. Go to test (or create test)
 +
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/controller/MovieController.java[tag=go-to-test]
 --
-. Type Hierarchy (Ctrl + H)
+. File Structure
 +
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=file-structure]
 --
-. Method Hierarchy (Ctrl + Shift + H)
+. Type Hierarchy
 +
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=type-hierarchy]
+--
+. Method Hierarchy
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/repository/MovieRepository.java[tag=method-hierarchy]
 --
 . Call Hierarchy (Ctrl + alt + H)
 +
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/repository/CustomerRepository.java[tag=call-hierarchy]
 --
 . Analyze Data Flow from here
 +
@@ -65,12 +87,18 @@ include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/C
 --
 . Compare with clipboard
 +
+Compare
 --
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/solution/refactor/SolutionCustomerController.java[tag=compare-with-clipboard-source]
+--
+with
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=compare-with-clipboard-target]
 --
 . Open blank diff window
 +
---
---
+And diff the following 2 files:
+
 . Go to Line
 +
 --
