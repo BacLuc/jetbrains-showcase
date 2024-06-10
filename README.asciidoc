@@ -1,0 +1,296 @@
+= Tips and tricks for JetBrains products
+
+image::scs_logo_text.png[]
+
+This repo shows some of the capabilities of the different JetBrains products.
+Many of them work for all of them, some are only available for certain products.
+
+To jump directly to places where you can use the feature, AsciiDoc include macros are used. +
+For that to work well, you need the https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDoc Plugin]. +
+Then you can use Ctrl+click (or Command+Click) to jump to the tag.
+
+To use JetBrains products, you don't need to know all the shortcuts.
+But one shortcut to start would be good: Shift + Shift opens the search all box, where
+you can search in the actions, symbols, files etc.
+Then, you can type the action you want to execute, and execute the action with enter.
+
+To know what you may want to optimize you can use the "Productivity Guide".
+
+image::assets/my-productivity-find-action.png[find action my productivity]
+image::assets/my-productivity.png[my productivity]
+
+== View Modes
+
+https://www.jetbrains.com/help/idea/ide-viewing-modes.html[]
+
+. Full screen mode
+. Distraction free mode
+. Presentation mode
+. Zen mode
+. Compact mode
+
+== Navigation
+
+. Jump to File/Class/Symbol
++
+Use Shift+Shift
+
+. Open Recent Files
++
+Use action "Recent Files"
+or press Ctrl+E
+
+== Analyze code
+
+. Analyze variable
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=variable-inspection]
+--
+. Analyze parameter
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=parameter-inspection]
+--
+. Show context info
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=show-context-info]
+--
+. Go to Declaration
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=go-to-declaration]
+--
+. Go to Usages
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/entity/Rental.java[tag=go-to-usage]
+--
+. Go to test (or create test)
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/controller/MovieController.java[tag=go-to-test]
+--
+. File Structure
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=file-structure]
+--
+. Type Hierarchy
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=type-hierarchy]
+--
+. Method Hierarchy
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/repository/MovieRepository.java[tag=method-hierarchy]
+--
+. Call Hierarchy (Ctrl + alt + H)
++
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/common/repository/CustomerRepository.java[tag=call-hierarchy]
+--
+. Compare with clipboard
++
+Compare
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/solution/refactor/SolutionCustomerController.java[tag=compare-with-clipboard-source]
+--
+with
+--
+include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerController.java[tag=compare-with-clipboard-target]
+--
+. Open blank diff window
++
+Use the action "Open blank diff window"
+And diff the following 2 files:
+
+.. link:intellij/src/main/resources/diff-files/diff-A.ndjson[]
+.. link:intellij/src/main/resources/diff-files/diff-B.ndjson[]
+
+. Go to Line
++
+Use action "Go to Line:Column"
+or press Ctrl+G
+
+== Code Editing
+
+. Show Context Actions
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=context-action]
+--
+. Paste from History
++
+Use the action "Paste from History" to paste
+or press Ctrl + Shift + V
+
+. Introduce (Extract) variable
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=introduce-variable]
+--
+. Introduce (Extract) field
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=introduce-field]
+--
+. Introduce (Extract) constant
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=introduce-constant]
+--
+. Extract method
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=extract-method]
+--
+. Introduce (Extract) Parameter
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=extract-parameter]
+--
+. Extract delegate
++
+--
+--
+. Inline (Constant, Field, Variable, Method)
++
+The inverse of the Extract and Introduce actions above.
+Use the action "Inline..." and the IDE will guess what you want to inline.
+. Complete Statement
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=complete-statement]
+--
+. Generate
++
+--
+include::intellij/src/test/java/ch/scs/jumpstart/movierental/exercise/refactor/CustomerControllerTest.java[tag=generate]
+--
+. Override Methods
++
+Shortcut for "Generate" when overriding methods.
+. Implement Methods
++
+Shortcut for "Generate" when overriding methods.
+. Extend Selection
++
+--
+--
+. Unwrap/Remove
++
+--
+--
+. Safe Delete
++
+--
+--
+. Save as live template
++
+--
+--
+. Insert live template
++
+--
+--
+. Surround with live template
++
+--
+--
+. Comment with line comment
++
+--
+--
+. Comment with block comment
++
+--
+--
+. Auto format
++
+--
+--
+. Refactor this
++
+--
+--
+. Change Signature
++
+--
+--
+. Rename
++
+--
+--
+
+
+== Run/Debug
+. Run Shift + f10
++
+--
+--
+. Debug Shift + f9
++
+--
+--
+. Run run configuration (alt + shift + f10)
++
+--
+--
+. Debugging process
++
+--
+--
+
+== Version Control
+. Compare with branch
++
+--
+--
+. Compare with local
++
+--
+--
+. Compare with branch
++
+--
+--
+. Branches
++
+--
+--
+. Reword F2
++
+--
+--
+. Window Management
+Version control grouping
+Window to bottom
++
+--
+--
+
+== Database Tool
+
+== HTTP Request Client
+
+== Organisation
+
+. Task Management
++
+--
+--
+. Create Scratch
++
+--
+--
+. Create Scratch Buffer
++
+--
+--
+. Show Scratch Files
++
+--
+--
