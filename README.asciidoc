@@ -1,15 +1,15 @@
-= Tips and tricks for Jetbrains products
+= Tips and tricks for JetBrains products
 
 image::scs_logo_text.png[]
 
-This repo shows some of the capabilities of the different jetbrains products.
+This repo shows some of the capabilities of the different JetBrains products.
 Many of them work for all of them, some are only available for certain products.
 
 To jump directly to places where you can use the feature, AsciiDoc include macros are used. +
 For that to work well, you need the https://plugins.jetbrains.com/plugin/7391-asciidoc[AsciiDoc Plugin]. +
 Then you can use Ctrl+click (or Command+Click) to jump to the tag.
 
-To use Jetbrains products, you don't need to know all the shortcuts.
+To use JetBrains products, you don't need to know all the shortcuts.
 But one shortcut to start would be good: Shift + Shift opens the search all box, where
 you can search in the actions, symbols, files etc.
 Then, you can type the action you want to execute, and execute the action with enter.
@@ -17,7 +17,7 @@ Then, you can type the action you want to execute, and execute the action with e
 To know what you may want to optimize you can use the "Productivity Guide".
 
 image::assets/my-productivity-find-action.png[find action my productivity]
-image::assets/my-productivity.png[my producitvity]
+image::assets/my-productivity.png[my productivity]
 
 == View Modes
 
