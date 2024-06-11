@@ -17,10 +17,10 @@ public class CustomerController {
 
   // tag::type-hierarchy[]
   /*
-    Put the cursor on CustomerRepository
-    and use the action "Type Hierarchy"
-    or press Ctrl + H
-   */
+   Put the cursor on CustomerRepository
+   and use the action "Type Hierarchy"
+   or press Ctrl + H
+  */
   private final CustomerRepository customerRepository;
   // end::type-hierarchy[]
   // tag::go-to-declaration[]
@@ -44,6 +44,12 @@ public class CustomerController {
     return ResponseEntity.ok(customer);
   }
 
+  /*
+  If you come here with the action "Go to"
+  you can use the action "Back" to go one step back.
+  or you can use Ctrl + Shift + <-
+  (or with Shift + Alt + <-, depending on your kee binding.)
+  */
   public ResponseEntity<List<Customer>> getCustomers() {
     return ResponseEntity.ok(customerRepository.findAll());
   }
@@ -81,9 +87,9 @@ public class CustomerController {
 
   // tag::compare-with-clipboard-target[]
   /*
-    Select this method
-    and use action "Compare with clipboard"
-   */
+   Select this method
+   and use action "Compare with clipboard"
+  */
   public ResponseEntity<String> getInvoice(String customerName) {
     var customerOptional = customerRepository.findById(customerName);
     if (customerOptional.isEmpty()) {
@@ -99,20 +105,21 @@ public class CustomerController {
     return ResponseEntity.ok(customer.statement());
     // end::show-context-info[]
   }
+
   // end::compare-with-clipboard-target[]
 
   public ResponseEntity<RentalStatement> getJsonInvoice(String customerName) {
     // TODO
     // tag::file-structure[]
     /*
-      Use action "File structure"
-      or press Ctrl+F12
-      You can also search in the popup to navigate fast.
-      (you can search in most of the jetbrains windows)
+     Use action "File structure"
+     or press Ctrl+F12
+     You can also search in the popup to navigate fast.
+     (you can search in most of the jetbrains windows)
 
-      It does not matter where you do that,
-      asciidoc code inclusion needs some code to include.
-     */
+     It does not matter where you do that,
+     asciidoc code inclusion needs some code to include.
+    */
     return ResponseEntity.internalServerError().build();
     // end::file-structure[]
   }

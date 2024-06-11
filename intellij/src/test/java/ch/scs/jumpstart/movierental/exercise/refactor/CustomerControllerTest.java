@@ -59,7 +59,22 @@ class CustomerControllerTest {
     var customers = List.of(CUSTOMER_1, CUSTOMER_2);
     when(customerRepository.findAll()).thenReturn(customers);
 
-    assertThat(controller.getCustomers(), is(ok(customers)));
+    assertThat(
+        // tag::go-back-and-forth[]
+        /*
+        Put you cursor on getInvoice
+        and use action "Go to"
+        or use Ctrl + B
+        or use Ctrl + left_click
+
+        If you came back here with the "Back" action,
+        you can go forward again with the "Forward" action.
+        Or with Ctrl + Alt + ->
+        (or with Shift + Alt + ->, depending on your kee binding.)
+         */
+        controller.getCustomers(),
+        // end::go-back-and-forth[]
+        is(ok(customers)));
   }
 
   @Test

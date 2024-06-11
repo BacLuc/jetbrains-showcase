@@ -29,6 +29,23 @@ https://www.jetbrains.com/help/idea/ide-viewing-modes.html[]
 . Zen mode
 . Compact mode
 
+== Navigation
+
+. Jump to File/Class/Symbol
++
+Use Shift+Shift
+
+. Open Recent Files
++
+Use action "Recent Files"
+or press Ctrl+E
+
+. Go Back
+--
+. Analyze parameter
++
+--
+
 == Analyze code
 
 . Analyze variable
@@ -97,16 +114,16 @@ include::intellij/src/main/java/ch/scs/jumpstart/movierental/exercise/refactor/C
 --
 . Open blank diff window
 +
+Use the action "Open blank diff window"
 And diff the following 2 files:
+
+.. link:intellij/src/main/resources/diff-files/diff-A.ndjson[]
+.. link:intellij/src/main/resources/diff-files/diff-B.ndjson[]
 
 . Go to Line
 +
---
---
-. Trace current stream chain
-+
---
---
+Use action "Go to Line:Column"
+or press Ctrl+G
 
 == Code Editing
 
